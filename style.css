@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: rgb(255, 255, 255);
+  font: 12px arial;
+  margin: 0;
+  /* Mag weg als de site moet werken op mobiel*/
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-spacing: 0;
+  user-select: none;
+  overflow: hidden;
+  resize: none;
+}
+
+table.main-table {
+  width: 100vw;
+  position: relative;
+  left: 50vw;
+  transform: translate(-50%, 0);
+}
+
+td,
+th {
+  white-space: nowrap;
+  overflow: hidden;
+  resize: none;
+  width: 65px;
+}
+
+th.double {
+  width: 130px;
+}
+
+td {
+  border: 1px solid rgb(211, 210, 211);
+  text-align: center;
+  color: #616161;
+}
+
+th {
+  background: #2e8054;
+  color: white;
+  border: 1px solid #226a41;
+}
+
+th.resizable {
+  cursor: ew-resize;
+}
+
+td.empty {
+  width: 64px;
+}
+
+table.row-header-table {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: green;
+}
+
+table.row-header-table td {
+  border-left: none;
+  width: 65px;
+  background: #fff;
+}
+
+table.row-header-table td.resizable {
+  background: #fff;
+  cursor: ns-resize;
+}
