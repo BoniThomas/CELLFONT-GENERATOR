@@ -74,3 +74,8 @@ table.row-header-table td.resizable {
   background: #fff;
   cursor: ns-resize;
 }
+
+td.active {
+  background: green;
+  color: white;
+}

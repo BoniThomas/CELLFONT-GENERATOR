@@ -2,6 +2,10 @@ function random(min, max) {
   return min + Math.random() * (max - min);
 }
 
+function sum(l) {
+  return l.reduce((a, b) => a + b);
+}
+
 let mouseMoveHandler;
 let mouseUpHandler;
 
@@ -15,7 +19,12 @@ const App = {
   },
   computed: {
     rows() {
-      const rows = font[this.currentLetter].split("\n").slice(1);
+      return this.glyphRows(this.currentLetter);
+    },
+  },
+  methods: {
+    glyphRows(letter) {
+      const rows = font[letter].split("\n").slice(1);
       for (let i = 0; i < rows.length; i++) {
         let row = rows[i];
         while (row.length < 5) {
@@ -26,8 +35,6 @@ const App = {
 
       return rows;
     },
-  },
-  methods: {
     randomizeEverything() {
       for (let i = 0; i < this.columnWidths.length; i++) {
         this.columnWidths[i] = random(10, 100);
@@ -68,6 +75,80 @@ const App = {
     stopDraggingRow() {
       window.removeEventListener("mousemove", mouseMoveHandler);
       window.removeEventListener("mouseup", this.stopDraggingRow);
+    },
+
+    exportFont() {
+      const totalRowHeight = sum(this.rowHeights);
+      const totalColumnWidth = sum(this.columnWidths);
+      const scale = Math.round(800 / totalRowHeight);
+      const advanceWidth = Math.round((totalColumnWidth + 50) * scale);
+
+      const glyphs = [];
+
+      const notdefGlyph = new opentype.Glyph({
+        name: ".notdef",
+        unicode: 0,
+        advanceWidth,
+        path: new opentype.Path(),
+      });
+      glyphs.push(notdefGlyph);
+
+      const space = new opentype.Glyph({
+        name: "space",
+        unicode: 32,
+        advanceWidth: (totalColumnWidth + 50) * scale,
+        path: new opentype.Path(),
+      });
+      glyphs.push(space);
+
+      for (const character in fontMap) {
+        const unicode = character.charCodeAt(0);
+        const glyphInfo = fontMap[character];
+        const name = glyphInfo.name;
+
+        const rows = this.glyphRows(glyphInfo.shape);
+        const path = new opentype.Path();
+
+        let y = 0;
+        for (let rowIndex = 4; rowIndex >= 0; rowIndex--) {
+          const row = rows[rowIndex];
+          const rowHeight = this.rowHeights[rowIndex];
+          let x = 0;
+          for (let columnIndex = 0; columnIndex < 5; columnIndex++) {
+            const cell = row[columnIndex];
+            const columnWidth = this.columnWidths[columnIndex];
+            if (cell === "#") {
+              // console.log(x * columnWidth, y * rowHeight);
+              path.moveTo(x * scale, y * scale);
+              path.lineTo((x + columnWidth) * scale, y * scale);
+              path.lineTo((x + columnWidth) * scale, (y + rowHeight) * scale);
+              path.lineTo(x * scale, (y + rowHeight) * scale);
+              path.close();
+            }
+            x += columnWidth;
+          }
+
+          y += rowHeight;
+        }
+
+        const letterGlyph = new opentype.Glyph({
+          name,
+          unicode,
+          advanceWidth,
+          path,
+        });
+        glyphs.push(letterGlyph);
+      }
+
+      const exportFont = new opentype.Font({
+        familyName: "Cellfont",
+        styleName: "Medium",
+        unitsPerEm: 1000,
+        ascender: 800,
+        descender: -200,
+        glyphs,
+      });
+      exportFont.download();
     },
   },
 };
