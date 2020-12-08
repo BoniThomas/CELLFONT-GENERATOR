@@ -51,7 +51,7 @@
             :style="{ width: columnWidths[4] + 'px' }"
             @mouseDown="startDraggingColumn(4)"
           >
-            
+
           </th>
 
           <th colspan="2" class="double" @click="randomizeEverything">
@@ -69,7 +69,7 @@
         <!-- Font rows-->
         <tr
           v-for="(row, rowIndex) in rows"
-          :style="{ height: rowHeights[rowIndex] + 'px' }"
+          :style="{ height: rowHeights[rowIndex] + 'px', lineHeight: rowHeights[rowIndex] + 'px' }"
         >
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
           <td class="empty" v-for="_ in Array(4)">&nbsp;</td>
@@ -161,7 +161,7 @@
         <!-- font rows-->
         <tr
           v-for="(row, rowIndex) in rows"
-          :style="{ height: rowHeights[rowIndex] + 'px' }"
+          :style="{ height: rowHeights[rowIndex] + 'px', lineHeight: rowHeights[rowIndex] + 'px' }"
           @mouseDown="startDraggingRow(rowIndex)"
         >
           <td class="empty resizable">&nbsp;</td>
