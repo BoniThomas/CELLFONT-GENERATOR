@@ -76,6 +76,8 @@ table.row-header-table td.resizable {
 }
 
 td.active {
-  background: green;
-  color: white;
+  border: 1px solid #92908d;
+  border-style: double;
+  background: #f1f1f1;
+  color: #616161;
 }

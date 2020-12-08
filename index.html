@@ -90,56 +90,56 @@
         <tr>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
           <td :class="{ active: currentLetter === 'A' }" @click="currentLetter = 'A'">A</td>
-          <td @click="currentLetter = 'B'">B</td>
-          <td @click="currentLetter = 'C'">C</td>
-          <td @click="currentLetter = 'D'">D</td>
-          <td @click="currentLetter = 'E'">E</td>
-          <td @click="currentLetter = 'F'">F</td>
-          <td @click="currentLetter = 'G'">G</td>
-          <td @click="currentLetter = 'H'">H</td>
-          <td @click="currentLetter = 'I'">I</td>
-          <td @click="currentLetter = 'J'">J</td>
-          <td @click="currentLetter = 'K'">K</td>
-          <td @click="currentLetter = 'L'">L</td>
-          <td @click="currentLetter = 'M'">M</td>
+          <td :class="{ active: currentLetter === 'B' }" @click="currentLetter = 'B'">B</td>
+          <td :class="{ active: currentLetter === 'C' }" @click="currentLetter = 'C'">C</td>
+          <td :class="{ active: currentLetter === 'D' }" @click="currentLetter = 'D'">D</td>
+          <td :class="{ active: currentLetter === 'E' }" @click="currentLetter = 'E'">E</td>
+          <td :class="{ active: currentLetter === 'F' }" @click="currentLetter = 'F'">F</td>
+          <td :class="{ active: currentLetter === 'G' }" @click="currentLetter = 'G'">G</td>
+          <td :class="{ active: currentLetter === 'H' }" @click="currentLetter = 'H'">H</td>
+          <td :class="{ active: currentLetter === 'I' }" @click="currentLetter = 'I'">I</td>
+          <td :class="{ active: currentLetter === 'J' }" @click="currentLetter = 'J'">J</td>
+          <td :class="{ active: currentLetter === 'K' }" @click="currentLetter = 'K'">K</td>
+          <td :class="{ active: currentLetter === 'L' }" @click="currentLetter = 'L'">L</td>
+          <td :class="{ active: currentLetter === 'M' }" @click="currentLetter = 'M'">M</td>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
         </tr>
 
         <!-- Button row-->
         <tr>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
-          <td @click="currentLetter = 'N'">N</td>
-          <td @click="currentLetter = 'O'">O</td>
-          <td @click="currentLetter = 'P'">P</td>
-          <td @click="currentLetter = 'Q'">Q</td>
-          <td @click="currentLetter = 'R'">R</td>
-          <td @click="currentLetter = 'S'">S</td>
-          <td @click="currentLetter = 'T'">T</td>
-          <td @click="currentLetter = 'U'">U</td>
-          <td @click="currentLetter = 'V'">V</td>
-          <td @click="currentLetter = 'W'">W</td>
-          <td @click="currentLetter = 'X'">X</td>
-          <td @click="currentLetter = 'Y'">Y</td>
-          <td @click="currentLetter = 'Z'">Z</td>
+          <td :class="{ active: currentLetter === 'N' }" @click="currentLetter = 'N'">N</td>
+          <td :class="{ active: currentLetter === 'O' }" @click="currentLetter = 'O'">O</td>
+          <td :class="{ active: currentLetter === 'P' }" @click="currentLetter = 'P'">P</td>
+          <td :class="{ active: currentLetter === 'Q' }" @click="currentLetter = 'Q'">Q</td>
+          <td :class="{ active: currentLetter === 'R' }" @click="currentLetter = 'R'">R</td>
+          <td :class="{ active: currentLetter === 'S' }" @click="currentLetter = 'S'">S</td>
+          <td :class="{ active: currentLetter === 'T' }" @click="currentLetter = 'T'">T</td>
+          <td :class="{ active: currentLetter === 'U' }" @click="currentLetter = 'U'">U</td>
+          <td :class="{ active: currentLetter === 'V' }" @click="currentLetter = 'V'">V</td>
+          <td :class="{ active: currentLetter === 'W' }" @click="currentLetter = 'W'">W</td>
+          <td :class="{ active: currentLetter === 'X' }" @click="currentLetter = 'X'">X</td>
+          <td :class="{ active: currentLetter === 'Y' }" @click="currentLetter = 'Y'">Y</td>
+          <td :class="{ active: currentLetter === 'Z' }" @click="currentLetter = 'Z'">Z</td>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
         </tr>
 
         <!-- Button row-->
         <tr>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
-          <td @click="currentLetter = 'zero'">0</td>
-          <td @click="currentLetter = 'one'">1</td>
-          <td @click="currentLetter = 'two'">2</td>
-          <td @click="currentLetter = 'DRIE'">3</td>
-          <td @click="currentLetter = 'VIER'">4</td>
-          <td @click="currentLetter = 'VIJF'">5</td>
-          <td @click="currentLetter = 'ZES'">6</td>
-          <td @click="currentLetter = 'ZEVEN'">7</td>
-          <td @click="currentLetter = 'ACHT'">8</td>
-          <td @click="currentLetter = 'NEGEN'">9</td>
-          <td @click="currentLetter = 'VRAAGTEKEN'">?</td>
-          <td @click="currentLetter = 'UITROEPTEKEN'">!</td>
-          <td @click="currentLetter = 'PUNT'">.</td>
+          <td :class="{ active: currentLetter === 'zero' }" @click="currentLetter = 'zero'">0</td>
+          <td :class="{ active: currentLetter === 'one' }" @click="currentLetter = 'one'">1</td>
+          <td :class="{ active: currentLetter === 'two' }" @click="currentLetter = 'two'">2</td>
+          <td :class="{ active: currentLetter === 'three' }" @click="currentLetter = 'three'">3</td>
+          <td :class="{ active: currentLetter === 'four' }" @click="currentLetter = 'four'">4</td>
+          <td :class="{ active: currentLetter === 'five' }" @click="currentLetter = 'five'">5</td>
+          <td :class="{ active: currentLetter === 'six' }" @click="currentLetter = 'six'">6</td>
+          <td :class="{ active: currentLetter === 'seven' }" @click="currentLetter = 'seven'">7</td>
+          <td :class="{ active: currentLetter === 'eight' }" @click="currentLetter = 'eight'">8</td>
+          <td :class="{ active: currentLetter === 'nine' }" @click="currentLetter = 'nine'">9</td>
+          <td :class="{ active: currentLetter === 'question' }" @click="currentLetter = 'question'">?</td>
+          <td :class="{ active: currentLetter === 'exclam' }" @click="currentLetter = 'exclam'">!</td>
+          <td :class="{ active: currentLetter === 'period' }" @click="currentLetter = 'period'">.</td>
           <td class="empty" v-for="_ in Array(10)">&nbsp;</td>
         </tr>
 
