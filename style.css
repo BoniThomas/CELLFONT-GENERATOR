@@ -3,7 +3,7 @@
 }
 body {
   background: rgb(255, 255, 255);
-  font: 12px arial;
+  font: 13px arial;
   margin: 0;
   /* Mag weg als de site moet werken op mobiel*/
   overflow: hidden;
@@ -30,11 +30,11 @@ th {
   white-space: nowrap;
   overflow: hidden;
   resize: none;
-  width: 65px;
+  width: 85px;
 }
 
 th.double {
-  width: 130px;
+  width: 170px;
 }
 
 td {
@@ -47,6 +47,8 @@ th {
   background: #2e8054;
   color: white;
   border: 1px solid #226a41;
+  height: 30px;
+  font: 16px arial;
 }
 
 th.resizable {
@@ -54,7 +56,7 @@ th.resizable {
 }
 
 td.empty {
-  width: 64px;
+  width: 85px;
 }
 
 table.row-header-table {
@@ -66,7 +68,7 @@ table.row-header-table {
 
 table.row-header-table td {
   border-left: none;
-  width: 65px;
+  width: 84.5px;
   background: #fff;
 }
 

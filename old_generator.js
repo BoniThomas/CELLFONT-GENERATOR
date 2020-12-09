@@ -7,7 +7,7 @@ function random(min, max) {
   return min + Math.random() * (max - min);
 }
 
-let columnWidths = [127.9968, 127.9968, 127.9968, 127.9968, 127.9968];
+let columnWidths = [65, 65, 65, 65, 65];
 let rowHeights = [31.5069, 31.5069, 31.5069, 31.5069, 31.5069];
 
 function drawLetter(letter) {

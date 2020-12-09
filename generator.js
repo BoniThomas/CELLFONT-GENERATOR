@@ -13,7 +13,7 @@ const App = {
   data() {
     return {
       currentLetter: "A",
-      columnWidths: [65, 65, 65, 65, 65],
+      columnWidths: [85, 85, 85, 85, 85],
       rowHeights: [16, 16, 16, 16, 16],
     };
   },
@@ -37,15 +37,15 @@ const App = {
     },
     randomizeEverything() {
       for (let i = 0; i < this.columnWidths.length; i++) {
-        this.columnWidths[i] = random(10, 100);
+        this.columnWidths[i] = random(5, 70);
       }
       for (let i = 0; i < this.rowHeights.length; i++) {
-        this.rowHeights[i] = random(10, 100);
+        this.rowHeights[i] = random(5, 70);
       }
     },
 
     randomizeColumnWidth(columnIndex) {
-      this.columnWidths[columnIndex] = random(10, 100);
+      this.columnWidths[columnIndex] = random(5, 70);
     },
     startDraggingColumn(columnIndex) {
       console.log("start");
@@ -142,7 +142,7 @@ const App = {
 
       const exportFont = new opentype.Font({
         familyName: "Cellfont",
-        styleName: "Medium",
+        styleName: "Regular",
         unitsPerEm: 1000,
         ascender: 800,
         descender: -200,
