@@ -14,7 +14,7 @@ const App = {
     return {
       currentLetter: "A",
       columnWidths: [85, 85, 85, 85, 85],
-      rowHeights: [16, 16, 16, 16, 16],
+      rowHeights: [21, 21, 21, 21, 21],
     };
   },
   computed: {

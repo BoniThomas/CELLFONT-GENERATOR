@@ -25,6 +25,10 @@ table.main-table {
   transform: translate(-50%, 0);
 }
 
+tr {
+  height: 21px;
+}
+
 td,
 th {
   white-space: nowrap;
