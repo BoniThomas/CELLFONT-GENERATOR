@@ -154,3 +154,39 @@ const App = {
 };
 
 Vue.createApp(App).mount("#app");
+
+introJs()
+  .setOptions({
+    steps: [
+      {
+        title: "Hello world!",
+        intro: "Hello world!",
+      },
+      {
+        title: "Change the width",
+        element: document.querySelector(".resizable"),
+        intro: "Drag one of the column headers to change the width.",
+      },
+      {
+        title: "Change the height",
+        element: document.querySelector(".resizable-rows .empty"),
+        intro: "Drag one of the rows to change the height.",
+      },
+      {
+        title: "Randomize",
+        element: document.querySelector("#randomizeButton"),
+        intro: "Blah",
+      },
+      {
+        title: "Export",
+        element: document.querySelector("#exportButton"),
+        intro: "Blah",
+      },
+      {
+        title: "Have fun!",
+
+        intro: "Hello world!",
+      },
+    ],
+  })
+  .start();
