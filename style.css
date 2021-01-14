@@ -89,5 +89,11 @@ td.active {
 }
 
 .introjs-tooltip-title {
-  color: red;
+  color: #616161;
+  font: 15px arial;
+}
+
+.introjs-tooltiptext {
+  color: #616161;
+  font: 13px arial;
 }

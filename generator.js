@@ -155,38 +155,47 @@ const App = {
 
 Vue.createApp(App).mount("#app");
 
-introJs()
-  .setOptions({
+introJs().setOptions({
     steps: [
       {
-        title: "Hello world!",
-        intro: "Hello world!",
+        title: "CELLFONT GENERATOR",
+        intro: "Here you can make your own customized font by changing the flexible grid. A grid based on excel.",
+        position: 'right'
       },
       {
-        title: "Change the width",
+        title: "CHANGE THE WIDTH",
         element: document.querySelector(".resizable"),
         intro: "Drag one of the column headers to change the width.",
       },
       {
-        title: "Change the height",
+        title: "CHANGE THE HEIGHT",
         element: document.querySelector(".resizable-rows .empty"),
         intro: "Drag one of the rows to change the height.",
+        position: 'right',
       },
       {
-        title: "Randomize",
+        title: "CHOOSE YOUR GLYPH",
+        element: document.querySelector("td.active"),
+        intro: "Click on a glyph to see what it looks like in your customized grid.",
+        position: 'top',
+      },
+      {
+        title: "RANDOMIZE",
         element: document.querySelector("#randomizeButton"),
-        intro: "Blah",
+        intro: "Click here to get a random shape.",
       },
       {
-        title: "Export",
+        title: "EXPORT",
         element: document.querySelector("#exportButton"),
-        intro: "Blah",
+        intro: "Click here to export your font.",
       },
       {
-        title: "Have fun!",
+        title: "HAVE FUN :)",
 
-        intro: "Hello world!",
+        intro: "© 2020 Thomas Boni",
       },
     ],
+    showBullets: false
   })
+  
   .start();
